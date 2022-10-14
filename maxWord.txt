@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.Scanner;
+
+//The words have to seperated by blank spaces.
+
+public class Lector {
+    
+    public void largestWordTxt() throws FileNotFoundException{
+        
+        Scanner file = new Scanner(new File("file.txt"));
+        String max = file.next();
+        while(file.hasNext()){
+            String word = file.next();
+            if(word.length() > max.length()){
+                max = word;
+            }
+        }
+        file.close();
+        System.out.println("Largest word: " + max);
+    }
+}
